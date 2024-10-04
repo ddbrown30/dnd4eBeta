@@ -6,12 +6,6 @@
 				<li class="summary-name">
 					<input name="name" type="text" value="{{actor.name}}" data-tooltip="{{localize 'DND4E.Name'}}" placeholder="{{localize 'DND4E.Name'}}" onClick="this.select();"/>
 				</li>
-				<li class="summary-race placeholder" data-placeholder="{{localize 'DND4E.Race'}}">
-					<input type="text" name="system.details.race" value="{{system.details.race}}" data-tooltip="{{localize 'DND4E.Race'}}" placeholder="{{localize 'DND4E.Race'}}" onClick="this.select();"/>
-				</li>
-				<li class="summary-class placeholder" data-placeholder="{{localize 'DND4E.Class'}}">
-					<input type="text" name="system.details.class" value="{{system.details.class}}" data-tooltip="{{localize 'DND4E.ClassName'}}"placeholder="{{localize 'DND4E.ClassName'}}" onClick="this.select();"/>
-				</li>
 				<li class="summary-level">
 					<label>{{localize 'DND4E.Level'}}</label>
 					<input type="text" name="system.details.level" value="{{system.details.level}}" data-tooltip="{{localize 'DND4E.Level'}}" data-dtype="Number" onClick="this.select();"/>
@@ -19,11 +13,11 @@
 			</ul>
 
 			<ul class="summary flexrow">
-				<li class="summary-path placeholder" data-placeholder="{{localize 'DND4E.Paragon'}}">
-					<input type="text" name="system.details.paragon" value="{{system.details.paragon}}" data-tooltip="{{localize 'DND4E.Paragon'}}"placeholder="{{localize 'DND4E.Paragon'}}" onClick="this.select();"/>
+				<li class="summary-path placeholder" data-placeholder="Primary Origin">
+					<input type="text" name="system.details.paragon" value="{{system.details.paragon}}" data-tooltip="Primary Origin"placeholder="Primary Origin" onClick="this.select();"/>
 				</li>
-				<li class="summary-path placeholder" data-placeholder="{{localize 'DND4E.Epic'}}">
-					<input type="text" name="system.details.epic" value="{{system.details.epic}}" data-tooltip="{{localize 'DND4E.Epic'}}"placeholder="{{localize 'DND4E.Epic'}}" onClick="this.select();"/>
+				<li class="summary-path placeholder" data-placeholder="Secondary Origin">
+					<input type="text" name="system.details.epic" value="{{system.details.epic}}" data-tooltip="Secondary Origin"placeholder="Secondary Origin" onClick="this.select();"/>
 				</li>
 				<li class="summary-exp">
 					<label>{{localize 'DND4E.Exp'}}</label>
@@ -76,20 +70,11 @@
 
 				{{!-- Surges --}}
 				<div class="attributes attribute-surge">
-					<h4 class="attribute-name">{{localize 'DND4E.HealingSurges'}}</h4>
+					<h4 class="attribute-name">Second Wind</h4>
 					<div class="attribute-value flexrow">
 						<div class="attribute-sub">
-							<strong class="attribute-name surge-bonus rollable" data-tooltip="{{localize 'DND4E.SurgeValue'}}">{{system.details.surgeValue}}</strong>
-							<div class="attribute-display surge-bonus rollable" data-tooltip="{{localize 'DND4E.SurgeValue'}}">{{localize 'DND4E.Value'}}</div>
-						</div>
-						<div class="attribute-sub attribute-input">
-							<input type="text" name="system.details.surges.value" value="{{system.details.surges.value}}" data-tooltip="{{localize 'DND4E.SurgeCur'}}"  placeholder="Current" data-dtype="Number" onClick="this.select();"/>
-							<div class="attribute-display envimental-loss-bonus rollable" data-tooltip="{{localize 'DND4E.SurgeCur'}}">{{localize 'DND4E.Uses'}}</div>
-						</div>
-						<span class="sep">/</span>
-						<div class="attribute-sub attribute-input">
-							<input type="text" name="system.details.surges.max" value="{{system.details.surges.max}}" data-tooltip="{{localize 'DND4E.SurgeDay'}}"  placeholder="Total" data-dtype="Number" onClick="this.select();"/>
-							<div class="attribute-display" data-tooltip="{{localize 'DND4E.SurgeDay'}}">{{localize 'DND4E.Day'}}</div>
+							<strong class="attribute-name surge-bonus rollable" data-tooltip="Heal Value">{{system.details.secondWindValue}}</strong>
+							<div class="attribute-display surge-bonus rollable" data-tooltip="Heal Value">Heal Value</div>
 						</div>
 						<div class="attribute-sub">
 							<input type="checkbox" name="system.details.secondwind" data-dtype="Boolean" {{checked system.details.secondwind}} data-tooltip="{{localize 'DND4E.SecondWindUsed'}}"/>
@@ -100,30 +85,6 @@
 						<a class="rest short-rest" data-tooltip="{{localize 'DND4E.RestShort'}}">{{ localize "DND4E.RestS" }}</a>
 						<a class="rest second-wind" data-tooltip="{{localize 'DND4E.SecondWind'}}">{{localize "DND4E.SecondWind"}}</a>
 						<a class="rest long-rest" data-tooltip="{{localize 'DND4E.RestLong'}}">{{ localize "DND4E.RestL" }}</a>
-						<a class="rest heal-menu" data-tooltip="{{localize 'DND4E.HealingMenu'}}">{{localize "DND4E.HealingMenu"}}</a>
-					</footer>
-				</div>
-
-				{{!-- Action Points --}}
-				<div class="attributes attribute-action">
-					<h4 class="attribute-name">{{localize 'DND4E.ActionPoints'}}</h4>
-					<div class="attribute-value flexrow">
-						<div class="attribute-sub">
-							<input type="text" name="system.actionpoints.value" value="{{system.actionpoints.value}}" data-tooltip="{{localize 'DND4E.ActionPointsRemain'}}" data-dtype="Number" onClick="this.select();" placeholder="0"/>
-							<div class="attribute-display" data-tooltip="{{localize 'DND4E.ActionPointsRemain'}}">{{localize 'DND4E.Remaining'}}</div>
-						</div>
-						<div class="attribute-sub">
-							<input type="checkbox" type="checkbox" name="system.actionpoints.encounteruse" data-dtype="Boolean" {{checked system.actionpoints.encounteruse}} data-tooltip="Action Point used this encounter?"/>
-							<div class="attribute-display-check" data-tooltip="{{localize 'DND4E.ActionPointUsed'}}">{{localize 'DND4E.Used'}}</div>
-						</div>
-					</div>
-					<footer class="attribute-footer attribute-footer--surge flexrow">
-						<span>{{localize 'DND4E.MilestonePlural'}}</span>
-						<input class="milestones" name="system.magicItemUse.milestone" value="{{system.magicItemUse.milestone}}" data-tooltip="{{localize 'DND4E.MilestonePlural'}}"  placeholder="0" data-dtype="Number" onClick="this.select();">
-						<a class="rest action-point-extra" data-tooltip="{{localize 'DND4E.ActionPointUse'}}">{{localize "DND4E.ActionPointRiders"}}</a>
-					</footer>
-					<footer class="attribute-footer attribute-footer--surge flexrow">
-						<a class="rest action-point" data-tooltip="{{localize 'DND4E.ActionPointUse'}}">{{localize "DND4E.ActionPointUse"}}</a>
 					</footer>
 				</div>
 			</section>
@@ -139,7 +100,7 @@
 					
 
 					{{#unless system.halfLevelOptions}}
-					<label>+{{localize 'DND4E.HalfLVL'}}</label>
+					<label>+LVL</label>
 					{{/unless}}
 
 				</div>

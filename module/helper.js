@@ -973,6 +973,9 @@ export class Helper {
 		else if (chatData.rangeType === "touch") {
 			powerDetail += ` <span class="range-type melee">${game.i18n.localize("DND4E.Melee")}</span> <span class="range-size touch">${CONFIG.DND4E.rangeType[chatData.rangeType].label}</span>`;
 		}
+		else if (['aura', 'aura'].includes(chatData.rangeType)) {
+			powerDetail += ` <span class="range-type aura">${CONFIG.DND4E.rangeType[chatData.rangeType].label}</span> <span class="range-size">${this._areaValue(chatData, actorData)}</span>`;
+		}
 		else {
 			powerDetail += `</span>`;
 		}
@@ -1011,9 +1014,11 @@ export class Helper {
 				if(!(attackTotal.startsWith("+") || attackTotal.startsWith("-"))) {
 					attackTotal = '+' + attackTotal;
 				}
-			}else if(chatData.attack.ability){
+			} else if(chatData.attack.ability == "form") {
+				attackTotal = attackValues;
+			} else if(chatData.attack.ability) {
 				attackTotal = CONFIG.DND4E.abilities[chatData.attack.ability];
-			}else{
+			} else {
 				attackTotal = game.i18n.localize("DND4E.Attack");
 			}
 			
@@ -1160,14 +1165,18 @@ export class Helper {
 					duration.startRound = combat?.round || 0;
 					flags.dnd4e.effectData.startTurnInit =	combat?.turns[combat?.turn]?.initiative || 0;
 
+					const targetTokenId = t.id;
 					const userTokenId = this.getTokenIdForLinkedActor(parent);
 					const userInit = this.getInitiativeByToken(userTokenId);
-					const targetInit = t ? this.getInitiativeByToken(t.id) : userInit;
+					const targetInit = t ? this.getInitiativeByToken(targetTokenId) : userInit;
 					const currentInit = this.getCurrentTurnInitiative();
+					
+					flags.dnd4e.effectData.userTokenId = userTokenId;
+					flags.dnd4e.effectData.targetTokenId = targetTokenId;
 
 					if(flags.dnd4e.effectData.durationType === "endOfTargetTurn" || flags.dnd4e.effectData.durationType === "startOfTargetTurn"){
 						duration.rounds = combat? currentInit > targetInit ? combat.round : combat.round + 1 : 0;
-						flags.dnd4e.effectData.durationTurnInit = t ? targetInit : userInit;						
+						flags.dnd4e.effectData.durationTurnInit = t ? targetInit : userInit;
 					}
 					else if(flags.dnd4e.effectData.durationType === "endOfUserTurn" || flags.dnd4e.effectData.durationType === "startOfUserTurn" ){
 						duration.rounds = combat? currentInit > userInit ? combat.round : combat.round + 1 : 0;

@@ -317,6 +317,7 @@ export default class ActorSheet4e extends ActorSheet {
 		for (const [key, group] of Object.entries(powers)) {
 			group.items?.forEach(item => {
 				this._preparePowerRangeText(item);
+				this._preparePowerIconText(item);
 				this._checkPowerAvailable(item);
 			});
 		}
@@ -500,6 +501,32 @@ ${parseInt(data.system.movement.walk.value)} ${game.i18n.localize("DND4E.Movemen
 
 		}
 	}
+
+	_preparePowerIconText(itemData) {
+		let rangeType = itemData.system.rangeType;
+		if (rangeType == "weapon") {
+			if (itemData.system.weaponType == "melee") {
+				rangeType = "melee";
+			} else if (itemData.system.weaponType == "ranged") {
+				rangeType = "range";
+			} else {
+				const weaponUse = Helper.getWeaponUse(itemData.system, this.actor);
+				rangeType = weaponUse && weaponUse.system.isRanged ? "range" : "melee";
+			}
+		}
+		
+		if (rangeType === "melee") {
+			itemData.system.iconText = itemData.system.isBasicAttack ? "5" : ",";
+		} else if (rangeType === "range") {
+			itemData.system.iconText = itemData.system.isBasicAttack ? "6" : "-";
+		} else if (rangeType === "closeBurst" || rangeType === "closeBlast") {
+			itemData.system.iconText = "+";
+		} else if (rangeType === "rangeBurst" || rangeType === "rangeBlast") {
+			itemData.system.iconText = "*";
+		} else if (rangeType === "aura") {
+			itemData.system.iconText = "Q";
+		}
+	}
   /* -------------------------------------------- */
 	/**
    * A helper method to generate the text for the range of difrent powers
@@ -527,6 +554,10 @@ ${parseInt(data.system.movement.walk.value)} ${game.i18n.localize("DND4E.Movemen
 		} else if(itemData.system.rangeType === "closeBurst") {
 			itemData.system.rangeText = `Close Burst ${area}`
 			itemData.system.rangeTextShort = "C-BU"
+			itemData.system.rangeTextBlock = `${area}`
+		} else if(itemData.system.rangeType === "aura") {
+			itemData.system.rangeText = `Aura ${area}`
+			itemData.system.rangeTextShort = "AU"
 			itemData.system.rangeTextBlock = `${area}`
 		} else if(itemData.system.rangeType === "rangeBurst") {
 			itemData.system.rangeText = `Area Burst ${area} within ${itemData.system.rangePower}`

@@ -359,7 +359,7 @@ export default class Item4e extends Item {
 	 * @type {boolean}
 	 */
 	get hasAreaTarget() {
-		return ["closeBurst", "closeBlast", "rangeBurst", "rangeBlast", "wall"].includes(this.system.rangeType);
+		return ["closeBurst", "closeBlast", "rangeBurst", "rangeBlast", "wall", "aura"].includes(this.system.rangeType);
 	}
 
   /* -------------------------------------------- */

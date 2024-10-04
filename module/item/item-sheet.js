@@ -1,6 +1,6 @@
 // import {onManageActiveEffect, prepareActiveEffectCategories} from "../effects.js";
 import ActiveEffect4e from "../effects/effects.js";
-import {Helper} from "../helper.js";
+import { Helper } from "../helper.js";
 
 /**
  * Override and extend the core ItemSheet implementation to handle specific item types
@@ -73,6 +73,12 @@ export default class ItemSheet4e extends ItemSheet {
 		if(itemData.type === "power"){
 			data.powerWeaponUseTargets = this._getItemsWeaponUseTargets(itemData);
 			data.effectsPowers = this._prepareEffectPowersCategories(this.item.effects);
+
+			if (itemData.system.autoGenChatPowerCard) {
+				let cardString = Helper._preparePowerCardData(await this.item.getChatData(), CONFIG);
+				cardString = Helper.commonReplace(cardString, null, this, null, 1);
+				itemData.system.description.value = cardString;
+			} 
 		}
 
 		if(itemData.type === "consumable"){
@@ -101,13 +107,18 @@ export default class ItemSheet4e extends ItemSheet {
 		}
 
 		if(itemData.system?.useType) {
-			if(!(itemData.system.rangeType === "personal" || itemData.system.rangeType === "closeBurst" || itemData.system.rangeType === "closeBlast" || itemData.system.rangeType === "")){
+			if(!(itemData.system.rangeType === "personal" || itemData.system.rangeType === "closeBurst" || itemData.system.rangeType === "aura" || itemData.system.rangeType === "closeBlast" || itemData.system.rangeType === "")){
 				itemData.system.isRange = true;
 			}
 
-			if(itemData.system.rangeType === "closeBurst" || itemData.system.rangeType === "closeBlast" || itemData.system.rangeType === "rangeBurst" || itemData.system.rangeType === "rangeBlast" || itemData.system.rangeType === "wall" ) { 
+			if(itemData.system.rangeType === "closeBurst" || itemData.system.rangeType === "aura" || itemData.system.rangeType === "closeBlast" || itemData.system.rangeType === "rangeBurst" || itemData.system.rangeType === "rangeBlast" || itemData.system.rangeType === "wall" ) { 
 				itemData.system.isArea = true;
 			}
+
+			if(itemData.system.rangeType === "melee" || itemData.system.rangeType === "range" || itemData.system.rangeType === "weapon"){
+				itemData.system.supportsBasic = true;
+			}
+
 			itemData.system.isRecharge = itemData.system.useType === "recharge";
 		}
 

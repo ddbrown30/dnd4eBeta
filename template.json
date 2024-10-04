@@ -383,20 +383,6 @@
 						"armourCheck": true,
 						"chat": "@name uses @label."
 					},
-					"arc": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "int",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
 					"ath": {
 						"value": 0,
 						"base": 0,
@@ -411,90 +397,6 @@
 						"armourCheck": true,
 						"chat": "@name uses @label."
 					},
-					"blu": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "cha",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"dip": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "cha",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"dun": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "wis",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"end": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "con",
-						"armourCheck": true,
-						"chat": "@name uses @label."
-					},
-					"hea": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "wis",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"his": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "int",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
 					"ins": {
 						"value": 0,
 						"base": 0,
@@ -506,20 +408,6 @@
 						"untyped": 0,
 						"bonus": [{}],
 						"ability": "wis",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"itm": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "cha",
 						"armourCheck": false,
 						"chat": "@name uses @label."
 					},
@@ -551,49 +439,7 @@
 						"armourCheck": false,
 						"chat": "@name uses @label."
 					},
-					"rel": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "int",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
 					"stl": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "dex",
-						"armourCheck": true,
-						"chat": "@name uses @label."
-					},
-					"stw": {
-						"value": 0,
-						"base": 0,
-						"feat": 0,
-						"item": 0,
-						"power": 0,
-						"training": 0,
-						"race": 0,
-						"untyped": 0,
-						"bonus": [{}],
-						"ability": "cha",
-						"armourCheck": false,
-						"chat": "@name uses @label."
-					},
-					"thi": {
 						"value": 0,
 						"base": 0,
 						"feat": 0,
@@ -697,6 +543,14 @@
 						"immune": false,
 						"bonus": [{}]
 					},
+					"electricity": {
+						"value": 0,
+						"res": 0,
+						"vuln": 0,
+						"armour": 0,
+						"immune": false,
+						"bonus": [{}]
+					},
 					"fire": {
 						"value": 0,
 						"res": 0,
@@ -713,7 +567,7 @@
 						"immune": false,
 						"bonus": [{}]
 					},
-					"lightning": {
+					"laser": {
 						"value": 0,
 						"res": 0,
 						"vuln": 0,
@@ -745,7 +599,7 @@
 						"immune": false,
 						"bonus": [{}]
 					},
-					"radiant": {
+					"radiation": {
 						"value": 0,
 						"res": 0,
 						"vuln": 0,
@@ -753,7 +607,7 @@
 						"immune": false,
 						"bonus": [{}]
 					},
-					"thunder": {
+					"sonic": {
 						"value": 0,
 						"res": 0,
 						"vuln": 0,

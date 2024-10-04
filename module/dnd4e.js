@@ -377,3 +377,21 @@ Hooks.on("getSceneControlButtons", function(controls){
 		icon: "dnd4e-blast-svg",
 	})
 })
+
+Hooks.on("combatTurn", function(combat, updates, options){
+	Turns._OnCombatTurn(combat, updates, options);
+})
+
+Hooks.on("combatRound", function(combat, updates, options){
+	Turns._OnCombatRound(combat, updates, options);
+})
+
+Hooks.on("updateActor", async function(actor, updates, options){
+	const bloodiedStatus = CONFIG.statusEffects.find(e => e.id === "bloodied");
+	let bloodiedEffect = actor.effects.find((e) => (e.id == bloodiedStatus._id) || ((e.statuses.size === 1) && e.statuses.has(bloodiedStatus.id)));
+	let shouldBeBloodied = actor.system.details.isBloodied && actor.system.attributes.hp.value > 0;
+	if ((shouldBeBloodied && !bloodiedEffect) ||
+		(!shouldBeBloodied && bloodiedEffect)) {
+		await actor.toggleStatusEffect("bloodied");
+	}
+})

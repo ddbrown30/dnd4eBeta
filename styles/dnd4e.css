@@ -2,6 +2,11 @@
 /*  Global Basics
 /* ----------------------------------------- */
 
+@font-face {
+    font-family: DnD5Attack;
+    src: url(../fonts/DnD5Attack-Regular.ttf) format("truetype")
+}
+
 .dnd4e-blast-svg {
 	content: url(../icons/ui/blast.svg);
 }
@@ -2785,12 +2790,18 @@ input[type="text"].dice-count{
 .dnd4e .item-details .usage,
 .dnd4e .item-details .keywords,
 .dnd4e .item-details .action,
-.dnd4e .item-details .range-type{
+.dnd4e .item-details .range-type,
+.dnd4e .editor-content .usage,
+.dnd4e .editor-content .keywords,
+.dnd4e .editor-content .action,
+.dnd4e .editor-content .range-type {
 	font-weight:bold;
 }
 .dnd4e .item-description,
 .dnd4e .item-details .alt,
-.dnd4e .item-details .alt-highlight:nth-child(even) {
+.dnd4e .item-details .alt-highlight:nth-child(even),
+.dnd4e .editor-content .alt ,
+.dnd4e .editor-content .alt-highlight:nth-child(even) {
 	background:var(--gradient-4e);
 }
 span.flavor-text.critical,

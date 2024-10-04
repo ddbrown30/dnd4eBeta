@@ -113,6 +113,10 @@
 				{{#unless system.isArea}}<span class="range-of">{{ localize "DND4E.RangeOf" }}</span>{{/unless}}
 				<input type="text" name="system.rangePower" value="{{system.rangePower}}" data-dtype="Number"/>
 			{{/if}}
+			{{#if system.supportsBasic}}
+				<label for="system.isBasicAttack" style="vertical-align: top;">Basic</label>
+				<input type="checkbox" name="system.isBasicAttack" id="system.isBasicAttack" data-dtype="Boolean" {{checked system.isBasicAttack}} />
+			{{/if}}
 		</div>
 	</div>
 

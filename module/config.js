@@ -536,15 +536,16 @@ DND4E.damageTypes = {
 	"ongoing": "DND4E.Ongoing",
 	"acid": "DND4E.DamageAcid",
 	"cold": "DND4E.DamageCold",
+	"electricity": "Electricity",
 	"fire": "DND4E.DamageFire",
 	"force": "DND4E.DamageForce",
-	"lightning": "DND4E.DamageLightning",
+	"laser": "Laser",
 	"necrotic": "DND4E.DamageNecrotic",
 	"physical": "DND4E.Damagephysical",
 	"poison": "DND4E.DamagePoison",
 	"psychic": "DND4E.DamagePsychic",
-	"radiant": "DND4E.DamageRadiant",
-	"thunder": "DND4E.DamageThunder"
+	"radiation": "Radiation",
+	"sonic": "Sonic"
 };
 // DND4E.damageTypes = {
 // 	"damage": {label: "DND4E.DamageAll"},
@@ -889,6 +890,7 @@ DND4E.areaTargetTypes = {
 	closeBurst: "circle",
 	rangeBlast: "rect",
 	rangeBurst: "circle",
+	aura: "circle",
 };
 
 
@@ -1097,6 +1099,7 @@ DND4E.rangeType = {
 	"personal": {label: "DND4E.rangePersonal"},
 	"touch": {label: "DND4E.rangeTouch"},
 	"special": {label: "DND4E.rangeSpecial"},
+	"aura": {label: "Aura"},
 };
 preLocalize("rangeType", { keys: ["label"] });
 
@@ -1124,7 +1127,8 @@ DND4E.rangeKeys = {
 	"closeBlast": "DND4E.rangeCloseBlast",
 	"areaBurst": "DND4E.rangeBurst",
 	"areaBlast": "DND4E.rangeBlast",
-	"wall": "DND4E.rangeWall"
+	"wall": "DND4E.rangeWall",
+	"aura": "Aura"
 };
 
 DND4E.effectTypes = {
@@ -1176,14 +1180,15 @@ DND4E.saves = {
 
 	"Acid": "DND4E.DamageAcid",
 	"Cold": "DND4E.DamageCold",
+	"Electricity": "Electricity",
 	"Fire": "DND4E.DamageFire",
 	"Force": "DND4E.DamageForce",
-	"Lighting": "DND4E.DamageLightning",
+	"Laser": "Laser",
 	"Necrotic": "DND4E.DamageNecrotic",
 	"Poison": "DND4E.DamagePoison",
 	"Psychic": "DND4E.DamagePsychic",
-	"Radiant": "DND4E.DamageRadiant",
-	"Thunder ": "DND4E.DamageThunder",
+	"Radiation": "Radiation",
+	"Sonic ": "Sonic",
 	"Ongoing ": "DND4E.Ongoing",
 
 	"Charm": "DND4E.Charm",
@@ -1389,7 +1394,6 @@ DND4E.conditionTypes = {
 	"helpless": "DND4E.ConHelpless",
 	"immobilized": "DND4E.Immobilized",
 	"invisible": "DND4E.ConInvisible",
-	"marked": "DND4E.ConMarked",
 	"petrified": "DND4E.ConPetrified",
 	"prone": "DND4E.ConProne",
 	"restrained": "DND4E.ConRestrained",
@@ -1404,77 +1408,10 @@ DND4E.conditionTypes = {
 DND4E.statusEffect = [
 	//row 1
 	{
-		id: "mark_1",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_1.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_2",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_2.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_3",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_3.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_4",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_4.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_5",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_5.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_6",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_6.svg",
-		description: "EFFECTDESC.mark"
-	},
-	{
-		id: "mark_7",
-		label: "EFFECT.statusMark",
-		img: "systems/dnd4e/icons/statusEffects/mark_7.svg",
-		description: "EFFECTDESC.mark"
-	},
-	//row 2
-	{
 		id: "bloodied",
 		label: "EFFECT.statusBloodied",
 		img: "systems/dnd4e/icons/statusEffects/bloodied.svg",
 		description: "EFFECTDESC.bloodied"
-	},
-	{
-		id: "attack_up",
-		label: "EFFECT.statusAttackUp",
-		img: "systems/dnd4e/icons/statusEffects/attack_up.svg",
-		description: "EFFECTDESC.attackUp"
-	},
-	{
-		id: "attack_down",
-		label: "EFFECT.statusAttackDown",
-		img: "systems/dnd4e/icons/statusEffects/attack_down.svg",
-		description: "EFFECTDESC.attackDown"
-	},
-	{
-		id: "defUp",
-		label: "EFFECT.statusDefUp",
-		img: "systems/dnd4e/icons/statusEffects/def_up.svg",
-		description: "EFFECTDESC.defUp"
-	},
-	{
-		id: "defDown",
-		label: "EFFECT.statusDefDown",
-		img: "systems/dnd4e/icons/statusEffects/def_down.svg",
-		description: "EFFECTDESC.defDown"
 	},
 	{
 		id: "regen",
@@ -1489,18 +1426,6 @@ DND4E.statusEffect = [
 		description: "EFFECTDESC.ammoCount"
 	},
 	//row 3
-	{
-		id: "curse",
-		label: "EFFECT.statusCurse",
-		img: "systems/dnd4e/icons/statusEffects/curse.svg",
-		description: "EFFECTDESC.curse"
-	},
-	{
-		id: "oath",
-		label: "EFFECT.statusOath",
-		img: "systems/dnd4e/icons/statusEffects/oath.svg",
-		description: "EFFECTDESC.oath"
-	},
 	{
 		id: "hunter_mark",
 		label: "EFFECT.statusHunterMark",
@@ -1581,12 +1506,6 @@ DND4E.statusEffect = [
 		img: "systems/dnd4e/icons/statusEffects/dominated.svg",
 		description: "EFFECTDESC.dominated"
 	},
-	{
-		id: "drunk",
-		label: "EFFECT.statusDrunk",
-		img: "systems/dnd4e/icons/statusEffects/drunk.svg",
-		description: "EFFECTDESC.drunk"
-	},	
 	{
 		id: "dying",
 		label: "EFFECT.statusDying",
@@ -1703,14 +1622,7 @@ DND4E.statusEffect = [
 		label: "EFFECT.statusSneaking",
 		img: "systems/dnd4e/icons/statusEffects/sneaking.svg",
 		description: "EFFECTDESC.sneaking"
-	},
-	//row 8
-	{
-		id: "torch",
-		label: "EFFECT.statusTorch",
-		img: "systems/dnd4e/icons/statusEffects/torch.svg",
-		description: "EFFECTDESC.torch"
-	},
+	}
 ];
 
 // Languages
