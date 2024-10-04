@@ -393,7 +393,7 @@ function applyChatCardDamageInner(roll, multiplier, trueDamage=false) {
 
 	//Sort damage and damage type from roll terms into simpler array
 	roll.terms.forEach(e => {
-		if(typeof e.number === "number"){
+		if(typeof e.total === "number"){
 			if(e.flavor){
 				damageDealt.push([e.total,e.flavor]);
 				rollTotalRemain -= e.total;
