@@ -1,0 +1,89 @@
+{
+  "_id": "Nr5yUBr0Rzd5EuxY",
+  "name": "Summon Badgers",
+  "type": "ritual",
+  "img": "icons/magic/symbols/triangle-glowing-green.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "core": {
+      "sourceId": "Item.xbbM9s9joyku4A7i"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "MZbxT6Tw0ZjDJstw": 3
+  },
+  "system": {
+    "description": {
+      "value": "<p>This ritual costs 30gp of rare herbs to cast.</p>\n<p>On completion of this ritual [[/roll 1d4]] @Compendium[dnd4e.example_character.HDWZxEmA1MRhD3WS]{Badgers} appear in the square occupied by the caster.&nbsp;&nbsp;</p>\n<p>The ritual does not give caster any ability to command or communicate with the summoned badgers.</p>\n<p>The summoning process appears to put the badgers into a foul mood, which will be directed at the nearest thing to them, usually the caster.&nbsp; The nature check result is used to determine their reaction to summoning.</p>\n<table style=\"width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 21.0625%;\">Check Result</td>\n<td style=\"width: 78.9375%;\">Badger Reaction</td>\n</tr>\n<tr>\n<td style=\"width: 21.0625%;\">&lt;15</td>\n<td style=\"width: 78.9375%;\">Enraged: Will immiedately attack the summoner.</td>\n</tr>\n<tr>\n<td style=\"width: 21.0625%;\">15-24</td>\n<td style=\"width: 78.9375%;\">Grumpy: Will attack if threatened, provoked or looked at funny.&nbsp; Otherwise will wander off.</td>\n</tr>\n<tr>\n<td style=\"width: 21.0625%;\">25+</td>\n<td style=\"width: 78.9375%;\">Annoyed: Will wander off unless attacked or provoked.</td>\n</tr>\n</tbody>\n</table>\n<p>Nobody is entirely sure why this ritual was created, probably a druidic prank&nbsp;</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "Homebrew",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm"
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": null
+    },
+    "consume": {
+      "type": "attribute",
+      "target": "",
+      "amount": 30
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "requirements": "",
+    "level": "1",
+    "chatFlavor": "",
+    "attribute": "skills.nat.total",
+    "formula": "",
+    "category": "Exploration",
+    "market": "50gp",
+    "castTime": {
+      "value": 10,
+      "units": "minute"
+    }
+  },
+  "_key": "!items!Nr5yUBr0Rzd5EuxY"
+}

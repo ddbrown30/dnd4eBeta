@@ -1,0 +1,112 @@
+{
+  "name": "Barbarian Defence",
+  "type": "classFeats",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "effects": [
+    {
+      "_id": "me5az4Yzd4HSjrOB",
+      "changes": [
+        {
+          "key": "system.defences.ac.value",
+          "mode": 2,
+          "value": "@details.tier",
+          "priority": null
+        },
+        {
+          "key": "system.defences.ref.value",
+          "mode": 2,
+          "value": "@details.tier",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "origin": "Item.IuhWX3dT42S1Cgfi",
+      "transfer": true,
+      "flags": {},
+      "tint": "#ffffff",
+      "name": "Barbarian Defence",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/skills/movement/figure-running-gray.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!LEMFQnzJ3g1EPMcy.me5az4Yzd4HSjrOB"
+    }
+  ],
+  "folder": "4OBbdiQfugXxFAPH",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p>Gain +1 Bonus to AC and Reflex Defence per tier while you are not wearing heavy armour.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB2 pg.49",
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "class": "",
+    "hitFistLevel": 10,
+    "hitPerLevel": 5,
+    "surgePerDay": 5,
+    "skills": "<i class=\"fas fa-edit\"></i>",
+    "def": {
+      "ac": 0,
+      "fort": 0,
+      "ref": 0,
+      "wil": 0
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armour": []
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094091629,
+    "modifiedTime": 1686094091629,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "LEMFQnzJ3g1EPMcy",
+  "sort": 0,
+  "_key": "!items!LEMFQnzJ3g1EPMcy"
+}

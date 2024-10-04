@@ -1,0 +1,136 @@
+{
+  "name": "Sling Bullets",
+  "type": "consumable",
+  "img": "icons/weapons/ammunition/shot-round-brown.webp",
+  "effects": [],
+  "folder": "sHigNBQwx1ybBq5A",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p>Simple arrows made with shafts of wood and simple iron heads, the primary ammunition that is shot from bows.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg. 222",
+    "quantity": 20,
+    "weight": 0.25,
+    "price": 0.05,
+    "attuned": false,
+    "equipped": true,
+    "rarity": "Uncommon",
+    "identified": true,
+    "container": null,
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": "",
+      "autoDestroy": false
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "attack": {
+      "shareAttackRoll": false,
+      "isAttack": false,
+      "ability": "",
+      "abilityBonus": 0,
+      "def": "ac",
+      "defBonus": 0,
+      "formula": "",
+      "damageType": {},
+      "effectType": {}
+    },
+    "hit": {
+      "shareDamageRoll": false,
+      "isDamage": false,
+      "isHealing": false,
+      "healSurge": "",
+      "baseQuantity": "1",
+      "baseDiceType": "Base Weapon Damage",
+      "detail": "",
+      "formula": "",
+      "critFormula": "",
+      "healFormula": ""
+    },
+    "miss": {
+      "detail": "",
+      "formula": ""
+    },
+    "effect": {
+      "detail": ""
+    },
+    "damage": {
+      "parts": []
+    },
+    "damageCrit": {
+      "parts": []
+    },
+    "damageImp": {
+      "parts": []
+    },
+    "damageCritImp": {
+      "parts": []
+    },
+    "level": "",
+    "consumableType": "ammo",
+    "autoGenChatPowerCard": false,
+    "useType": "item",
+    "actionType": "",
+    "rangeType": "",
+    "attackBonus": null,
+    "formula": ""
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094269735,
+    "modifiedTime": 1686094269735,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "cFc36qObTfN51zX3",
+  "sort": 0,
+  "_key": "!items!cFc36qObTfN51zX3"
+}

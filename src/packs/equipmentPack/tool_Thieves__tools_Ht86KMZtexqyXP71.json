@@ -1,0 +1,90 @@
+{
+  "name": "Thieves’ tools",
+  "type": "tool",
+  "img": "icons/tools/hand/lockpicks-steel-grey.webp",
+  "effects": [],
+  "folder": "sHigNBQwx1ybBq5A",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p>Tools used for tinkering with locks or other sensitive equipment.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg.222",
+    "quantity": 1,
+    "weight": 1,
+    "price": 20,
+    "attuned": false,
+    "equipped": false,
+    "rarity": "Common",
+    "identified": true,
+    "container": null,
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": null
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "level": "",
+    "attribute": "skills.thi.total",
+    "chatFlavor": "",
+    "formula": "",
+    "bonus": "2"
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094279343,
+    "modifiedTime": 1686094279343,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "Ht86KMZtexqyXP71",
+  "sort": 0,
+  "_key": "!items!Ht86KMZtexqyXP71"
+}

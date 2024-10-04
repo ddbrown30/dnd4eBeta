@@ -1,0 +1,201 @@
+{
+  "name": "Blood Hunter",
+  "type": "power",
+  "img": "icons/skills/wounds/blood-drip-droplet-red.webp",
+  "effects": [],
+  "folder": "NMrUgPwFPL5SkAon",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p><em>The bloodlust of your demonic heritage excites you to finish off the weak.</em></p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg.48",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": "",
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "attack": {
+      "shareAttackRoll": false,
+      "isAttack": false,
+      "ability": "str",
+      "abilityBonus": 0,
+      "def": "ac",
+      "defBonus": 0,
+      "formula": "@wepAttack+@powerMod+@lvhalf",
+      "damageType": {},
+      "effectType": {}
+    },
+    "hit": {
+      "shareDamageRoll": false,
+      "isDamage": false,
+      "isHealing": false,
+      "healSurge": "",
+      "baseQuantity": "1",
+      "baseDiceType": "weapon",
+      "detail": "",
+      "formula": "@powBase + @powerMod + @wepDamage",
+      "critFormula": "@powMax + @powerMod + @wepDamage + @wepCritBonus",
+      "healFormula": ""
+    },
+    "miss": {
+      "detail": "",
+      "formula": "@{damageFormula}/2"
+    },
+    "effect": {
+      "detail": "[[+1]] bonus to attack rolls made against bloodied targets."
+    },
+    "damage": {
+      "parts": []
+    },
+    "damageCrit": {
+      "parts": []
+    },
+    "damageImp": {
+      "parts": []
+    },
+    "damageCritImp": {
+      "parts": []
+    },
+    "keyWords": [
+      ""
+    ],
+    "level": "",
+    "powersource": "martial",
+    "secondPowersource": "",
+    "subName": "Tiefling Racial",
+    "prepared": true,
+    "powerType": "race",
+    "powerSubtype": "feature",
+    "useType": "other",
+    "actionType": "none",
+    "requirements": "",
+    "weaponType": "none",
+    "weaponUse": "none",
+    "rangeType": "personal",
+    "rangeTextShort": "",
+    "rangeText": "",
+    "rangePower": null,
+    "area": 0,
+    "rechargeRoll": "",
+    "rechargeCondition": "",
+    "damageShare": false,
+    "postEffect": true,
+    "postSpecial": true,
+    "autoGenChatPowerCard": true,
+    "sustain": {
+      "actionType": "none",
+      "detail": ""
+    },
+    "trigger": "",
+    "requirement": "",
+    "special": "",
+    "specialAdd": {
+      "parts": []
+    },
+    "damageType": {
+      "damage": false,
+      "acid": false,
+      "cold": false,
+      "fire": false,
+      "force": false,
+      "lightning": false,
+      "necrotic": false,
+      "physical": false,
+      "poison": false,
+      "psychic": false,
+      "radiant": false,
+      "thunder": false
+    },
+    "effectType": {
+      "augmentable": false,
+      "aura": false,
+      "beast": false,
+      "beastForm": false,
+      "channelDiv": false,
+      "charm": false,
+      "conjuration": false,
+      "disease": false,
+      "elemental": false,
+      "evocation": false,
+      "fear": false,
+      "fullDis": false,
+      "gaze": false,
+      "healing": false,
+      "illusion": false,
+      "invigorating": false,
+      "mount": false,
+      "necro": false,
+      "nether": false,
+      "poison": false,
+      "polymorph": false,
+      "rage": false,
+      "rattling": false,
+      "reliable": false,
+      "runic": false,
+      "sleep": false,
+      "spirit": false,
+      "stance": false,
+      "summoning": false,
+      "teleportation": false,
+      "transmutation": false,
+      "zone": false,
+      "enchantment": false
+    },
+    "chatFlavor": "",
+    "effectHTML": false
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094125284,
+    "modifiedTime": 1686094125284,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "YVyfBmcrLW74Aj6t",
+  "sort": 0,
+  "_key": "!items!YVyfBmcrLW74Aj6t"
+}

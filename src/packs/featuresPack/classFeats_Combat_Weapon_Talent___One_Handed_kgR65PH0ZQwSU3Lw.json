@@ -1,0 +1,107 @@
+{
+  "name": "Combat Weapon Talent - One Handed",
+  "type": "classFeats",
+  "img": "icons/skills/melee/maneuver-daggers-paired-orange.webp",
+  "effects": [
+    {
+      "_id": "VUrhXpp7IzkUPlg9",
+      "changes": [
+        {
+          "key": "@CombatTalent",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "origin": "Compendium.dnd4e.class_features.LyGfDZrbzt7kQgVT",
+      "transfer": true,
+      "flags": {},
+      "tint": "#ffffff",
+      "name": "Combat Weapon Talent Bonus",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/skills/melee/maneuver-daggers-paired-orange.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!kgR65PH0ZQwSU3Lw.VUrhXpp7IzkUPlg9"
+    }
+  ],
+  "folder": "4OBbdiQfugXxFAPH",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p>You gain a +1 bonus to attack rolls with attacks made with a one-handed weapon.</p>\n<p>&nbsp;</p>\n<p>This feat creates a variable <code>@CombatTalent</code> that you can add to the attack formula of 1 handed weapons</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg.76",
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "class": "",
+    "hitFistLevel": 10,
+    "hitPerLevel": 5,
+    "surgePerDay": 5,
+    "skills": "<i class=\"fas fa-edit\"></i>",
+    "def": {
+      "ac": 0,
+      "fort": 0,
+      "ref": 0,
+      "wil": 0
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armour": []
+    },
+    "level": null
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094093866,
+    "modifiedTime": 1686094093866,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "kgR65PH0ZQwSU3Lw",
+  "sort": 0,
+  "_key": "!items!kgR65PH0ZQwSU3Lw"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Races (SRD)",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "hE67zu2JDa7VFd5I",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!hE67zu2JDa7VFd5I"
+}

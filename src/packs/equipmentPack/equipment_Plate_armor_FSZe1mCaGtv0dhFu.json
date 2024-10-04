@@ -1,0 +1,123 @@
+{
+  "name": "Plate armor",
+  "type": "equipment",
+  "img": "icons/equipment/chest/breastplate-collared-steel-grey.webp",
+  "effects": [],
+  "folder": "676N3JsB3VGN4pMD",
+  "flags": {
+    "core": {},
+    "cf": {
+      "id": "temp_fnagaznip1",
+      "path": "Plate Armor",
+      "color": "#000000"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB p.2.14",
+    "quantity": 1,
+    "weight": 50,
+    "price": 50,
+    "attuned": false,
+    "equipped": false,
+    "rarity": "",
+    "identified": true,
+    "container": null,
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "armour": {
+      "value": 10,
+      "type": "armour",
+      "subType": "heavy",
+      "enhance": 0,
+      "ac": 8,
+      "fort": 0,
+      "ref": 0,
+      "wil": 0,
+      "dex": null,
+      "movePen": true,
+      "movePenValue": -1,
+      "skillCheck": true,
+      "skillCheckValue": -2,
+      "damageRes": {
+        "parts": []
+      }
+    },
+    "hp": {
+      "value": 0,
+      "max": 0,
+      "dt": null,
+      "conditions": ""
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "level": null,
+    "speed": {
+      "value": null,
+      "conditions": ""
+    },
+    "strength": 0,
+    "stealth": false,
+    "proficient": true,
+    "armourBaseType": "plate"
+  },
+  "ownership": {
+    "default": 0,
+    "dufIaLBd1dXrSVQC": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094169642,
+    "modifiedTime": 1686094169642,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "FSZe1mCaGtv0dhFu",
+  "sort": 0,
+  "_key": "!items!FSZe1mCaGtv0dhFu"
+}

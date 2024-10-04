@@ -1,0 +1,172 @@
+{
+  "name": "Dragonborn",
+  "type": "raceFeats",
+  "img": "icons/creatures/abilities/dragon-breath-purple.webp",
+  "effects": [
+    {
+      "_id": "2hXKYXynt29yoQSj",
+      "changes": [
+        {
+          "key": "system.skills.his.base",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "system.skills.itm.base",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "origin": "Item.6LXj0rfRsxcPiO0m",
+      "transfer": true,
+      "flags": {},
+      "tint": "#ffffff",
+      "name": "Skill Bonuses",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/skills/social/theft-pickpocket-bribery-brown.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!bOLHzqqC3HyXMmBq.2hXKYXynt29yoQSj"
+    },
+    {
+      "_id": "nkc08iVUCxAMwyoH",
+      "changes": [
+        {
+          "key": "system.details.surgeBon.value",
+          "mode": 2,
+          "value": "@conMod",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "origin": "Item.6LXj0rfRsxcPiO0m",
+      "transfer": true,
+      "flags": {},
+      "tint": "#ffffff",
+      "name": "Draconic Heritage",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/creatures/abilities/dragon-breath-purple.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!bOLHzqqC3HyXMmBq.nkc08iVUCxAMwyoH"
+    }
+  ],
+  "folder": "hE67zu2JDa7VFd5I",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p><strong>Average Height:</strong> 6&acute; 2˝&ndash;6&acute; 8˝</p>\n<p><strong>Average Weight:</strong> 220&ndash;320 lb.</p>\n<p><strong>Ability Scores:</strong></p>\n<ul>\n<li>+2 Strength</li>\n<li>+2 Charisma</li>\n</ul>\n<p><strong>Size:</strong> Medium</p>\n<p><strong>Speed:</strong> 6 squares</p>\n<p><strong>Vision:</strong> Normal</p>\n<p><strong>Languages:</strong></p>\n<ul>\n<li>Common</li>\n<li>Draconic</li>\n</ul>\n<p><strong>Skill Bonuses:</strong></p>\n<ul>\n<li>+2 History</li>\n<li>+2 Intimidate</li>\n</ul>\n<p><strong>Dragonborn Fury:</strong> When you&rsquo;re bloodied, you gain a +1 racial bonus to attack rolls.</p>\n<p><strong>Draconic Heritage:</strong> Your healing surge value is equal to one-quarter of your maximum hit points + your Constitution modifier.</p>\n<p><strong>Dragon Breath:</strong> You can use @Compendium[dnd4e.example_powers.AD88LoNM3skrnHxx]{Dragon Breath} as an encounter power.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg.34",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": null
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "requirements": "",
+    "level": ""
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094303212,
+    "modifiedTime": 1686094303212,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "bOLHzqqC3HyXMmBq",
+  "sort": 0,
+  "_key": "!items!bOLHzqqC3HyXMmBq"
+}

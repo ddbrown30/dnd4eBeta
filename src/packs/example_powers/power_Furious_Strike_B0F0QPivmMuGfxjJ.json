@@ -1,0 +1,202 @@
+{
+  "_id": "B0F0QPivmMuGfxjJ",
+  "name": "Furious Strike",
+  "type": "power",
+  "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "core": {
+      "sourceId": "Item.f6xgaCe32idyNZ64"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3
+  },
+  "system": {
+    "description": {
+      "value": "<p>You let out a great shout as you unleash all your strength into your strike.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB2 pg. 14",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": "",
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 1,
+      "max": "1",
+      "per": "enc"
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "attack": {
+      "shareAttackRoll": false,
+      "isAttack": false,
+      "ability": "str",
+      "abilityBonus": 0,
+      "def": "ac",
+      "defBonus": 0,
+      "formula": "@wepAttack + @powerMod + @lvhalf + @atkMod",
+      "damageType": {},
+      "effectType": {}
+    },
+    "hit": {
+      "shareDamageRoll": false,
+      "isDamage": false,
+      "isHealing": false,
+      "healSurge": "",
+      "baseQuantity": "1",
+      "baseDiceType": "weapon",
+      "detail": "",
+      "formula": "@powBase + @powerMod + @wepDamage + @dmgMod",
+      "critFormula": "@powMax + @powerMod + @wepDamage + @wepCritBonus + @dmgMod",
+      "healFormula": ""
+    },
+    "miss": {
+      "detail": "",
+      "formula": "@damageFormula/2"
+    },
+    "effect": {
+      "detail": "The attack deals an additional 1[w] damage if it's a weapon attack, or 1d8 extra damage if it isn't."
+    },
+    "damage": {
+      "parts": []
+    },
+    "damageCrit": {
+      "parts": []
+    },
+    "damageImp": {
+      "parts": []
+    },
+    "damageCritImp": {
+      "parts": []
+    },
+    "keyWords": [
+      ""
+    ],
+    "level": "",
+    "powersource": "",
+    "secondPowersource": "",
+    "subName": "Half-Orc Racial",
+    "prepared": true,
+    "powerType": "class",
+    "powerSubtype": "attack",
+    "useType": "encounter",
+    "actionType": "free",
+    "requirements": "",
+    "weaponType": "none",
+    "weaponUse": "none",
+    "rangeType": "personal",
+    "rangeTextShort": "",
+    "rangeText": "",
+    "rangePower": null,
+    "area": 0,
+    "rechargeRoll": "",
+    "rechargeCondition": "",
+    "damageShare": false,
+    "postEffect": true,
+    "postSpecial": true,
+    "autoGenChatPowerCard": true,
+    "sustain": {
+      "actionType": "none",
+      "detail": ""
+    },
+    "trigger": "You hit an enemy",
+    "requirement": "",
+    "special": "",
+    "specialAdd": {
+      "parts": []
+    },
+    "damageType": {
+      "damage": false,
+      "acid": false,
+      "cold": false,
+      "fire": false,
+      "force": false,
+      "lightning": false,
+      "necrotic": false,
+      "physical": false,
+      "poison": false,
+      "psychic": false,
+      "radiant": false,
+      "thunder": false
+    },
+    "effectHTML": false,
+    "effectType": {
+      "augmentable": false,
+      "aura": false,
+      "beast": false,
+      "beastForm": false,
+      "channelDiv": false,
+      "charm": false,
+      "conjuration": false,
+      "disease": false,
+      "elemental": false,
+      "enchantment": false,
+      "evocation": false,
+      "fear": false,
+      "fullDis": false,
+      "gaze": false,
+      "healing": false,
+      "illusion": false,
+      "invigorating": false,
+      "mount": false,
+      "necro": false,
+      "nether": false,
+      "poison": false,
+      "polymorph": false,
+      "rage": false,
+      "rattling": false,
+      "reliable": false,
+      "runic": false,
+      "sleep": false,
+      "spirit": false,
+      "stance": false,
+      "summoning": false,
+      "teleportation": false,
+      "transmutation": false,
+      "zone": false
+    },
+    "chatFlavor": ""
+  },
+  "_key": "!items!B0F0QPivmMuGfxjJ"
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Combat Weapon Talent - Two Handed",
+  "type": "classFeats",
+  "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
+  "effects": [
+    {
+      "_id": "PjZaPxRTsrL8FllU",
+      "changes": [
+        {
+          "key": "weapon.attack.two.untyped",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "origin": "Compendium.dnd4e.class_features.7rpBJ6SFiJpZYHtS",
+      "transfer": true,
+      "flags": {},
+      "tint": "#ffffff",
+      "name": "Combat Weapon Talent",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.331",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!4OewAM0fKxcFbS8k.PjZaPxRTsrL8FllU"
+    }
+  ],
+  "folder": "4OBbdiQfugXxFAPH",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p><span style=\"color: #191813;\">You gain a +1 bonus to attack rolls with attacks made with a two-handed weapon.</span></p>\n<p>&nbsp;</p>\n<p><span style=\"color: #191813;\">This feat contains an effect that automatically adds +1 untyped bonus to all rolls made with a weapon that has the \"T<code>wo Handed</code>\" property.</span></p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "",
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "class": "",
+    "hitFistLevel": 10,
+    "hitPerLevel": 5,
+    "surgePerDay": 5,
+    "skills": "<i class=\"fas fa-edit\"></i>",
+    "def": {
+      "ac": 0,
+      "fort": 0,
+      "ref": 0,
+      "wil": 0
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armour": []
+    },
+    "level": null
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094095048,
+    "modifiedTime": 1686094095048,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "4OewAM0fKxcFbS8k",
+  "sort": 0,
+  "_key": "!items!4OewAM0fKxcFbS8k"
+}

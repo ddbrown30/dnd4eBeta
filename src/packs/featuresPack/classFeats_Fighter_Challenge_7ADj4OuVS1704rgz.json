@@ -1,0 +1,63 @@
+{
+  "name": "Fighter Challenge",
+  "type": "classFeats",
+  "img": "icons/skills/wounds/injury-face-impact-orange.webp",
+  "effects": [],
+  "folder": "4OBbdiQfugXxFAPH",
+  "flags": {
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "value": "<p>When ever you attack an target, regardless if it is a hit or a miss, you may choose to mark that target. While a target is mark, it takes a &ndash;2 penalty to attack rolls until the end of your next turn. If a marked enemy that is adjacent to you shifts, or makes an attack that does not include you as a target, you may make a @Compendium[dnd4e.example_powers.ONy4VrAvuUYUelhR]{Basic Attack (Melee)} against that target as part of an immediate interrupt.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "PHB pg.76",
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "class": "",
+    "hitFistLevel": 10,
+    "hitPerLevel": 5,
+    "surgePerDay": 5,
+    "skills": "<i class=\"fas fa-edit\"></i>",
+    "def": {
+      "ac": 0,
+      "fort": 0,
+      "ref": 0,
+      "wil": 0
+    },
+    "proficiencies": {
+      "weapons": [],
+      "armour": []
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "T3nwKfAW5OVEHtN0": 3,
+    "g0MtquG4PDZsp27e": 3,
+    "mwPSiDi2B7G7VIPe": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.2",
+    "coreVersion": "12.331",
+    "createdTime": 1686094096249,
+    "modifiedTime": 1686094096249,
+    "lastModifiedBy": "mwPSiDi2B7G7VIPe",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "7ADj4OuVS1704rgz",
+  "sort": 0,
+  "_key": "!items!7ADj4OuVS1704rgz"
+}

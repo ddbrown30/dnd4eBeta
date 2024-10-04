@@ -1,0 +1,203 @@
+{
+  "_id": "bSUhfYLTUAJjz9Fi",
+  "name": "Fiery Wrath",
+  "type": "power",
+  "img": "icons/magic/fire/explosion-embers-orange.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "core": {
+      "sourceId": "Item.UpWkpOwzbGnZKNXx"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "MZbxT6Tw0ZjDJstw": 3
+  },
+  "system": {
+    "description": {
+      "value": "<p>This power is totally homebrew, it demonstrates implement area effect powers, and how to use an effect that gives a conditional bonus.&nbsp; (It is effected by @Compendium[dnd4e.example_feats.i8wF69SvMbVUeD9M]{Flames of the 9 Hells})</p>\n<p>Also that this text description will not show, as a flavour text was explicitly specified.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "descriptionGM": {
+      "value": ""
+    },
+    "source": "Homebrew",
+    "activation": {
+      "type": "",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": "All Creatures in Burst",
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": 1,
+      "max": "1",
+      "per": "enc"
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "macro": {
+      "type": "script",
+      "scope": "global",
+      "launchOrder": "off",
+      "command": "",
+      "author": "",
+      "autoanimationHook": ""
+    },
+    "attack": {
+      "shareAttackRoll": false,
+      "isAttack": true,
+      "ability": "int",
+      "abilityBonus": 0,
+      "def": "ac",
+      "defBonus": 0,
+      "formula": "@wepAttack + @powerMod + @lvhalf + @atkMod",
+      "damageType": {},
+      "effectType": {}
+    },
+    "hit": {
+      "shareDamageRoll": false,
+      "isDamage": true,
+      "isHealing": false,
+      "healSurge": "",
+      "baseQuantity": "1",
+      "baseDiceType": "d8",
+      "detail": "1d8 + @intMod Fire damage and the target takes ongoing 5 Fire Damage",
+      "formula": "@powBase + @powerMod + @wepDamage + @dmgMod",
+      "critFormula": "@powMax + @powerMod + @wepDamage + @wepCritBonus + @dmgMod",
+      "healFormula": ""
+    },
+    "miss": {
+      "detail": "Half Damage and no ongoing damage",
+      "formula": ""
+    },
+    "effect": {
+      "detail": ""
+    },
+    "damage": {
+      "parts": []
+    },
+    "damageCrit": {
+      "parts": []
+    },
+    "damageImp": {
+      "parts": []
+    },
+    "damageCritImp": {
+      "parts": []
+    },
+    "keyWords": [
+      ""
+    ],
+    "level": "1",
+    "powersource": "arcane",
+    "secondPowersource": "",
+    "subName": "",
+    "prepared": true,
+    "powerType": "race",
+    "powerSubtype": "attack",
+    "useType": "encounter",
+    "actionType": "standard",
+    "requirements": "",
+    "weaponType": "implement",
+    "weaponUse": "default",
+    "rangeType": "closeBurst",
+    "rangeTextShort": "",
+    "rangeText": "",
+    "rangePower": 10,
+    "area": 1,
+    "rechargeRoll": "",
+    "rechargeCondition": "",
+    "damageShare": false,
+    "postEffect": true,
+    "postSpecial": true,
+    "autoGenChatPowerCard": true,
+    "sustain": {
+      "actionType": "none",
+      "detail": ""
+    },
+    "trigger": "",
+    "requirement": "",
+    "special": "",
+    "specialAdd": {
+      "parts": []
+    },
+    "type": "encounter",
+    "damageType": {
+      "damage": false,
+      "acid": false,
+      "cold": false,
+      "fire": true,
+      "force": false,
+      "lightning": false,
+      "necrotic": false,
+      "physical": false,
+      "poison": false,
+      "psychic": false,
+      "radiant": false,
+      "thunder": false
+    },
+    "effectHTML": false,
+    "effectType": {
+      "augmentable": false,
+      "aura": false,
+      "beast": false,
+      "beastForm": false,
+      "channelDiv": false,
+      "charm": false,
+      "conjuration": false,
+      "disease": false,
+      "elemental": false,
+      "enchantment": false,
+      "evocation": false,
+      "fear": false,
+      "fullDis": false,
+      "gaze": false,
+      "healing": false,
+      "illusion": false,
+      "invigorating": false,
+      "mount": false,
+      "necro": false,
+      "nether": false,
+      "poison": false,
+      "polymorph": false,
+      "rage": false,
+      "rattling": false,
+      "reliable": false,
+      "runic": false,
+      "sleep": false,
+      "spirit": false,
+      "stance": false,
+      "summoning": false,
+      "teleportation": false,
+      "transmutation": false,
+      "zone": false
+    },
+    "chatFlavor": "Eternity of being a punching bag has given Steve a fiery temper."
+  },
+  "_key": "!items!bSUhfYLTUAJjz9Fi"
+}

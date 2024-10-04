@@ -1,0 +1,189 @@
+{
+  "name": "Effects",
+  "folder": null,
+  "flags": {
+    "core": {}
+  },
+  "pages": [
+    {
+      "name": "Effects",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can use effects to modify any of a creature's attributes, in the same way you normally would for foundry. @Compendium[dnd4e.example_character.BF5aEE8y1e3bh7Jc]{Steve, The Example Character} has a whole set of examples about effects adding bonuses to account for his class, race and feat selection.</p><p>These modifiers can use formulae and <code>@variables</code> that refer to the actor as their values (see @UUID[Compendium.dnd4e.manual.JournalEntry.PuJCVdkeDHbyFpeT.JournalEntryPage.UteMJPMuW11OAKWl]{Possible Variables in Formula} for the listing of what variables they can refer to). As ever, Steve has some examples (his fighter class features uses <code>@level</code> to calculate his hit points)</p><p><em>It is highly recommended to install and configure Autocomplete Inline Properties for creating effects. It supports all of the attributes on the actors, and all of the possible weapon and damage properties. (See @Compendium[dnd4e.manual.pSOFSTYYchdZ0rZB]{Module Integrations})</em></p><p>Effects are a powerful tool, but are quite technical and are not always obvious, and give most of their benefit in automating shared bonuses (so our examples use them to automate character bonuses that you get from various classes and races, so you only need to add that pack to your character and are ready to go).</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">It is entirely possible to ignore them entirely</span></strong></span> - the sheet has ways you can manually enter bonuses with full text descriptions for all of your characters attributes and power and weapon effects can be replaced by adding the relevant bonus to the power or weapon formula.</p><h2>\"Standard Foundry Modifiers\" Versus \"Custom 4E Modifiers\"</h2><p>The 4E system supports using Active Effects to change the actor's attributes as in the core Foundry mechanics (reference: https://foundryvtt.wiki/en/development/guides/active-effects). You can use this to modify many attributes of the character, and the trick is entering the right key. We will list some common ones below.</p><p>The key thing about these, is that Foundry's modifiers do not map natively onto 4E's bonus system. Specifically, there is no \"change mode\" to implement 4E's bonus stacking rules (untyped bonuses stack, all others take highest). You will need to manage this yourself, and only apply one for the highest bonus if you have multiple bonuses of the same type.</p><p>As well as the standard foundry modifiers, the system incorporates Custom 4E specific modifiers as a way for effects to add bonuses to power attacks and damage rolls from different sources, often feats or class / race features. <span><strong>These are completely custom 4E modifiers, that are only using the \"effect\" Foundry structure to make it easy to create and transfer them about.</strong> Because of this they ignore the \"change mode\" setting of each modifier (so you may as well leave it as \"<code>add</code>\"); however, because they are implemented by us, they can support 4E's bonus type rules.</span></p>",
+        "markdown": ""
+      },
+      "_id": "kIHeJJGEJ1lWFbu5",
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "core": {
+          "sourceId": "JournalEntry.s1GNpgdU1cGRYrGH.JournalEntryPage.kIHeJJGEJ1lWFbu5"
+        }
+      },
+      "_stats": {
+        "systemId": "dnd4e",
+        "systemVersion": "0.4.24",
+        "coreVersion": "12.331",
+        "createdTime": null,
+        "modifiedTime": 1695358286627,
+        "lastModifiedBy": "I7KuK59Oi0LTgI98",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!VLRhDKYMBtS0MrJa.kIHeJJGEJ1lWFbu5"
+    },
+    {
+      "sort": 100000,
+      "name": "Standard Foundry Modifiers",
+      "type": "text",
+      "_id": "fHeMA0AzskCSyWsK",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>These can affect most of the common attributes of your character, but they will not respect D&amp;D 4E's bonus stacking rules. You can, however, use the \"change mode\" for each modifier to create bonuses that cover most use cases. See \"Change Mode and Priority\" below for more details.</p><h2 data-anchor=\"attributes-that-can-be-changed-using-standard-foundry-effects\">Attributes that can be changed using Standard Foundry Effects</h2><table><thead><tr><th style=\"width:20%\"><strong>Roughly What</strong></th><th style=\"width:30%\"><strong>Key</strong></th><th style=\"width:50%\"><strong>Details</strong></th></tr></thead><tbody><tr><td>Hit points</td><td><code>system.​attributes.​hp.​starting</code></td><td><p>Starting hit points (CON added automatically).</p><p>Change mode for this should be Override</p></td></tr><tr><td></td><td><code>system.​attributes.​hp.​perlevel</code></td><td><p>Hit points gained per level</p><p>Change mode for this should be Override</p></td></tr><tr><td></td><td><code>system.​attributes.​hp.​autototal</code></td><td><p>Auto Calculate Hit points using starting, per level and bonus.</p><p>Change mode for this should be Override</p></td></tr><tr><td></td><td><code>system.​attributes.​hp.​misc</code></td><td>Bonus Hit points, e.​g.​ from a feat.​ <strong>(WARNING*)</strong></td></tr><tr><td>Healing Surges</td><td><code>system.​details.​surges.​max</code></td><td>Maximum surges per day</td></tr><tr><td></td><td><code>system.​details.​surgeBon.​value</code></td><td>Bonus value to healing surges</td></tr><tr><td>Defences</td><td><code>system.​defences.​fort.​value</code></td><td>Fortitude Defence</td></tr><tr><td></td><td><code>system.​defences.​ref.​value</code></td><td>Reflex Defence</td></tr><tr><td></td><td><code>system.​defences.​wil.​value</code></td><td>Will Defence</td></tr><tr><td>Movement</td><td><code>system.​movement.​base.​base</code></td><td>Base movement speed (all others are derived based on this value)</td></tr><tr><td></td><td><code>system.​movement.​walk.​bonusValue</code></td><td>Walk (default) speed</td></tr><tr><td></td><td><code>system.​movement.​run.​bonusValue</code></td><td>Run Speed</td></tr><tr><td></td><td><code>system.​movement.​charge.​bonusValue</code></td><td>Charge Speed</td></tr><tr><td></td><td><code>system.​movement.​climb.​bonusValue</code></td><td>Climb Speed</td></tr><tr><td>Skill Checks</td><td><code>system.​skills.​acr.​base</code></td><td>Acrobatics</td></tr><tr><td></td><td><code>system.​skills.​arc.​base</code></td><td>Arcana</td></tr><tr><td></td><td><code>system.​skills.​ath.​base</code></td><td>Athletics</td></tr><tr><td></td><td><code>system.​skills.​blu.​base</code></td><td>Bluff</td></tr><tr><td></td><td><code>system.​skills.​dip.​base</code></td><td>Diplomacy</td></tr><tr><td></td><td><code>system.​skills.​dun.​base</code></td><td>Dungeoneering</td></tr><tr><td></td><td><code>system.​skills.​end.​base</code></td><td>Endurance</td></tr><tr><td></td><td><code>system.​skills.​hea.​base</code></td><td>Heal</td></tr><tr><td></td><td><code>system.​skills.​his.​base</code></td><td>History</td></tr><tr><td></td><td><code>system.​skills.​ins.​base</code></td><td>Insight</td></tr><tr><td></td><td><code>system.​skills.​itm.​base</code></td><td>Intimidate</td></tr><tr><td></td><td><code>system.​skills.​nat.​base</code></td><td>Nature</td></tr><tr><td></td><td><code>system.​skills.​prc.​base</code></td><td>Perception</td></tr><tr><td></td><td><code>system.​skills.​rel.​base</code></td><td>Religion</td></tr><tr><td></td><td><code>system.​skills.​stl.​base</code></td><td>Stealth</td></tr><tr><td></td><td><code>system.​skills.​stw.​base</code></td><td>Streetwise</td></tr><tr><td></td><td><code>system.​skills.​thi.​base</code></td><td>Thievery</td></tr><tr><td>Resistances</td><td><code>system.​resistances.​[type].​res</code></td><td>Resistance to the specified damage type**</td></tr><tr><td>Vulnerabilities</td><td><code>system.​resistances.​[type].vuln</code></td><td>Vulnerability to the specified damage type**</td></tr><tr><td>Initiative</td><td><code>system.​attributes.​init.​bonusValue</code></td><td>Adds value to current Initiative value</td></tr></tbody><tfoot><tr><td colspan=\"3\"><strong>*Bonus HP Warning:</strong> If you have an effect that modifies these with an ADD, it will repeatedly apply itself if you open and edit the misc bonus hit points via the Hit points Dialog on the sheet. We suggest you either process your hit point bonus using an effect, or by manually entering in the sheet, not both!</td></tr><tr><td colspan=\"3\"><strong>**Damage types:</strong> See @UUID[.L7LiUgL6CQFFnbAv#damage-types-(weapon-and-power)]{Damage Types (Weapon and Power)} for available damage types. You can also enter <code>ongoing</code> for ongoing damage, a special \"type\" that applies specifically to damage using the ongoing damage automation feature.</td></tr></tfoot></table><h2>Change Mode and Priority</h2><p>Standard Foundry modifiers don't understand 4e bonus stacking rules, but unlike the custom 4e modifiers, you <em>can</em> use the \"change mode\" setting (detailed in the <a href=\"https://foundryvtt.com/article/active-effects/\">official Foundry documentation for effects</a>) to create the correct behaviour for many bonuses/penalties. For example, using the \"upgrade\" mode allows you to create the correct \"highest only\" behaviour for most damage resistance values.</p><p>However, sometimes you will need one modifier to take precedence over another. For example, if you have a \"reduce resistance by 5\" effect, you will need it to be applied <em>after</em> any effects using the \"upgrade\" mode. In this case, you can enter a value in the \"Priority\" field for the modifier.</p><p>The higher the priority value, the later the modifier will be processed. A modifier which doesn't have a priority specified is ordered based on its change mode, as below. You can use these defaults to position your effect between others as required.</p><table style=\"max-width:16em\"><thead><tr><th>Change mode</th><th>Default priority</th></tr></thead><tbody><tr><td>Custom</td><td>0</td></tr><tr><td>Multiply</td><td>10</td></tr><tr><td>Add</td><td>20</td></tr><tr><td>Downgrade</td><td>30</td></tr><tr><td>Upgrade</td><td>40</td></tr><tr><td>Override</td><td>50</td></tr></tbody></table><p><strong>Example:</strong> Our \"reduce resistance by 5\" effect uses \"add\" mode, which would normally have priority 20—too low to interact correctly with upgrade effects. Instead, you would assign it a priority higher than 40 (so it applies after any upgrades) but lower than 50 (so an override will still, well, <em>override</em> it).</p>",
+        "markdown": ""
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "MZbxT6Tw0ZjDJstw": 3
+      },
+      "flags": {
+        "core": {
+          "sourceId": "JournalEntry.s1GNpgdU1cGRYrGH.JournalEntryPage.fHeMA0AzskCSyWsK"
+        }
+      },
+      "_stats": {
+        "systemId": "dnd4e",
+        "systemVersion": "0.4.51",
+        "coreVersion": "12.331",
+        "createdTime": 1688156181013,
+        "modifiedTime": 1716459947169,
+        "lastModifiedBy": "I7KuK59Oi0LTgI98",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!VLRhDKYMBtS0MrJa.fHeMA0AzskCSyWsK"
+    },
+    {
+      "sort": 200000,
+      "name": "Custom 4E Modifiers",
+      "type": "text",
+      "_id": "L7LiUgL6CQFFnbAv",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h1 data-anchor=\"custom-4e-effects-for-powers-and-weapons\">Custom 4E Modifiers for Powers and Weapons</h1><p>It is possible to add conditional modifiers to power attack and damage based on the powers keywords, the damage type, the power source and the properties of any weapon or implement that is used.</p><p>These <em>do</em> respect whether an effect is set to \"enabled\" or \"disabled\" and only enabled effects will be counted. They <em>do not</em> respect \"change mode\" and treat them all as \"add\".</p><p>These require creating an modifier that adds to:</p><ul><li><p><code>power.attack.[Property].[BonusType]</code></p></li><li><p><code>power.damage.[Property].[BonusType]</code></p></li><li><p><code>weapon.attack.[Property].[BonusType]</code></p></li><li><p><code>weapon.damage.[Property].[BonusType]</code></p></li></ul><p><code>power.attack</code> will add to the attack roll of matching powers.<br /><code>weapon.attack</code> will add to the attack roll of any power that uses the matching weapon.</p><p><code>power.damage</code> will add to all damage rolls of matching powers.<br /><code>weapon.damage</code> will add to all damage rolls of any power that uses the matching weapon.</p><p><code>[Property]</code> is the filter property that the power/weapon must have in order to qualify for this boost. It is the sheets internal key, not the localised name. See list below</p><p><code>[BonusType]</code> is the D&amp;D 4 bonus type, so that stacking rules between multiple types can be correctly applied. This is the only place in the effects system that respects 4E bonus types (because it is all custom code, everywhere else is internal foundry code).</p><p><strong>Remember: THESE ONLY APPLY TO POWER ATTACK AND DAMAGE ROLLS.</strong> This style of modifier cannot alter any other part of your character.</p><h2 data-anchor=\"bonus-types\">Bonus Types</h2><p>All bonuses must have a type here. Untyped bonuses should use the type “<code>untyped</code>” and they will stack, while all others will only take the highest bonus.(This is due to an internal implemental detail of effects. I wanted to make it so you did not have to put a type on untyped bonuses, but that is not possible in Foundry).</p><p>If using Auto-completer, autocomplete has been populated with a selection of the most common bonus types, but there is nothing stopping you using your own. Only <code>untyped</code> is treated any differently.</p><h2 data-anchor=\"power-vs-weapon-attributes\">Power Attributes vs Weapon Attributes</h2><p>Note that power-based keys look at the power's keywords and properties, not those of the equipped weapon/implement. For example, while the \"imp\" key given in the Weapon Properties table will only apply if the equipped weapon has the implement keyword, the \"usesImplement\" key in the Power Required Tool table will only apply if the power itself has the implement keyword.</p><p>For these keys, the equipped weapon's values are checked only for powers with \"melee or ranged weapon\" tool usage, where the power determines its keywords based on the actual weapon used.</p><h2 data-anchor=\"variables\">Variables</h2><p>Your bonus values can use <code>@variables</code> that would apply to roll formula, e.g. <code>@tier</code> or <code>@level</code> for bonuses that depend on level. You can also use custom <code>@variables</code> (see @UUID[Compendium.dnd4e.manual.JournalEntry.PuJCVdkeDHbyFpeT.JournalEntryPage.UteMJPMuW11OAKWl]{Possible Variables in Formula}); however custom <code>@variables</code> can only be used in these power/weapon effects. They do not work in effects that modify the actors main values.</p><p>Similarly, because these effects are only applied to attacks and damage rolls, they have access to all the Power and Weapon <code>@variables</code> as well as the actor ones, though I would caution using them as it will probably get confusing.</p><h2 data-anchor=\"examples\">Examples</h2><ul><li><p>Weapon Focus (Heavy Blade):<br /><code>weapon.damage.bladeh.feat = @tier</code></p></li><li><p>Feat that gives untyped bonus to attack and damage rolls with fire powers:<br /><code>power.attack.fire.untyped = 1<br />power.damage.fire.untyped = 1</code></p></li><li><p>Item that gives a scaling damage bonus on melee weapon attacks:<br /><code>power.damage.meleeWeapon.item = @tier</code></p></li><li><p>Trait that gives a racial bonus to implement attack rolls:<br /><code>power.damage.usesImplement.racial = 1</code></p></li></ul><p>They will show in formula when rolls are made as <code>@[BonusType]EffectBonus</code> e.g. <code>@FeatEffectBonus</code>. If you do not see one of these in the formula of a roll when you make it, then the effect has not been applied.</p><h2 data-anchor=\"debugging\">Debugging</h2><p>There is a system configuration option that you can enable where the effect application will log a lot of information to the console whenever you roll attack or damage so you can debug why a value is being applied / is not applied.</p><h1 data-anchor=\"suitable-properties\">Suitable Properties</h1><h2 data-anchor=\"power-attributes\">Power Attributes</h2><h3 data-anchor=\"power-source\">Power Sources</h3><table><thead><tr><th>Modifier Key</th><th>Power Source</th></tr></thead><tbody><tr><td>arcane</td><td>Arcane</td></tr><tr><td>divine</td><td>Divine</td></tr><tr><td>Elemental</td><td>Elemental</td></tr><tr><td>ki</td><td>Ki</td></tr><tr><td>martial</td><td>Martial</td></tr><tr><td>primal</td><td>Primal</td></tr><tr><td>psionic</td><td>Psionic</td></tr><tr><td>shadow</td><td>Shadow</td></tr></tbody></table><h3 data-anchor=\"power-effect-types\">Power Effect Types</h3><table><thead><tr><th>Modifier Key</th><th>Power Keyword</th></tr></thead><tbody><tr><td>augmentable</td><td>Augmentable</td></tr><tr><td>aura</td><td>Aura</td></tr><tr><td>beast</td><td>Beast</td></tr><tr><td>beastForm</td><td>Beast Form</td></tr><tr><td>channelDiv</td><td>Channel Divinity</td></tr><tr><td>charm</td><td>Charm</td></tr><tr><td>conjuration</td><td>Conjuration</td></tr><tr><td>disease</td><td>Disease</td></tr><tr><td>elemental</td><td>Elemental</td></tr><tr><td>enchantment</td><td>Enchantment</td></tr><tr><td>evocation</td><td>Evocation</td></tr><tr><td>fear</td><td>Fear</td></tr><tr><td>fullDis</td><td>Full Discipline</td></tr><tr><td>gaze</td><td>Gaze</td></tr><tr><td>healing</td><td>Healing</td></tr><tr><td>illusion</td><td>Illusion</td></tr><tr><td>invigorating</td><td>Invigorating</td></tr><tr><td>mount</td><td>Mount</td></tr><tr><td>necro</td><td>Necromancy</td></tr><tr><td>nether</td><td>Nethermancy</td></tr><tr><td>poison</td><td>Poison</td></tr><tr><td>polymorph</td><td>Polymorph</td></tr><tr><td>rage</td><td>Rage</td></tr><tr><td>rattling</td><td>Rattling</td></tr><tr><td>reliable</td><td>Reliable</td></tr><tr><td>runic</td><td>Runic</td></tr><tr><td>sleep</td><td>Sleep</td></tr><tr><td>spirit</td><td>Spirit</td></tr><tr><td>stance</td><td>Stance</td></tr><tr><td>summoning</td><td>Summoning</td></tr><tr><td>teleportation</td><td>Teleportation</td></tr><tr><td>transmutation</td><td>Transmutation</td></tr><tr><td>zone</td><td>Zone</td></tr></tbody></table><h3 data-anchor=\"tool-required\">Power Required Tool</h3><table><thead><tr><th>Modifier Key</th><th>Power Tool</th></tr></thead><tbody><tr><td>meleeWeapon</td><td>Melee Weapon</td></tr><tr><td>rangedWeapon</td><td>Ranged Weapon</td></tr><tr><td>usesImplement</td><td>Implement</td></tr><tr><td>weapon</td><td>Melee Weapon or Ranged Weapon</td></tr></tbody></table><h3 data-anchor=\"power-range/area\">Power Range/Area</h3><table><thead><tr><th>Modifier Key</th><th>Power Range/Area</th></tr></thead><tbody><tr><td>area</td><td>Area Burst, Area Blast, or Area Wall</td></tr><tr><td>areaBlast</td><td>Area Blast</td></tr><tr><td>areaBurst</td><td>Area Burst</td></tr><tr><td>blast</td><td>Close Blast or Area Blast</td></tr><tr><td>burst</td><td>Close Burst or Area Burst</td></tr><tr><td>close</td><td>Close Burst or Close Blast</td></tr><tr><td>closeBlast</td><td>Close Blast</td></tr><tr><td>closeBurst</td><td>Close Burst</td></tr><tr><td>melee</td><td>Melee, Melee Weapon, Reach, or Touch</td></tr><tr><td>ranged</td><td>Ranged or Ranged Weapon</td></tr></tbody></table><h2 data-anchor=\"damage-types\">Damage Types (Weapon and Power)</h2><table style=\"max-width:25em\"><thead><tr><th>Modifier Key</th><th>Damage Type</th></tr></thead><tbody><tr><td>damage</td><td>Damage (resist all damage for resistances, irresistible damage for powers)</td></tr><tr><td>acid</td><td>Acid</td></tr><tr><td>cold</td><td>Cold</td></tr><tr><td>fire</td><td>Fire</td></tr><tr><td>force</td><td>Force</td></tr><tr><td>lightning</td><td>Lightning</td></tr><tr><td>necrotic</td><td>Necrotic</td></tr><tr><td>physical</td><td>Physical</td></tr><tr><td>poison</td><td>Poison</td></tr><tr><td>psychic</td><td>Psychic</td></tr><tr><td>radiant</td><td>Radiant</td></tr><tr><td>thunder</td><td>Thunder</td></tr></tbody></table><h2 data-anchor=\"weapon-types\">Weapon Attributes</h2><h3 data-anchor=\"weapon-types\">Weapon Types</h3><table><thead><tr><th>Modifier Key</th><th>Weapon Type</th></tr></thead><tbody><tr><td>axe</td><td>Axe</td></tr><tr><td>blowgun</td><td>Blowgun</td></tr><tr><td>bow</td><td>Bow</td></tr><tr><td>cbow</td><td>Cross Bow</td></tr><tr><td>dragon</td><td>Dragon Shard</td></tr><tr><td>flail</td><td>Flail</td></tr><tr><td>garrote</td><td>Garrote</td></tr><tr><td>ham</td><td>Hammer</td></tr><tr><td>bladeH</td><td>Heavy Blade</td></tr><tr><td>bladeL</td><td>Light Blade</td></tr><tr><td>mace</td><td>Mace</td></tr><tr><td>pik</td><td>Pick</td></tr><tr><td>pole</td><td>Polearm</td></tr><tr><td>sling</td><td>Sling</td></tr><tr><td>spear</td><td>Spear</td></tr><tr><td>staff</td><td>Staff</td></tr><tr><td>unarm</td><td>Unarmed</td></tr><tr><td>whip</td><td>Whip</td></tr></tbody></table><h3 data-anchor=\"implement-types\">Implement Types</h3><table><thead><tr><th>Modifier Key</th><th>Implement Type</th></tr></thead><tbody><tr><td>holyS</td><td>Holy Symbol</td></tr><tr><td>ki</td><td>Ki Focus</td></tr><tr><td>orb</td><td>Orb</td></tr><tr><td>rod</td><td>Rod</td></tr><tr><td>staff</td><td>Staff</td></tr><tr><td>tome</td><td>Tome</td></tr><tr><td>totem</td><td>Totem</td></tr><tr><td>wand</td><td>Wand</td></tr></tbody></table><h3 data-anchor=\"weapon-properties\">Weapon Properties</h3><table><thead><tr><th>Modifier Key</th><th>Weapon Property</th></tr></thead><tbody><tr><td>amm</td><td>Ammunition</td></tr><tr><td>bru</td><td>Brutal</td></tr><tr><td>def</td><td>Defensive</td></tr><tr><td>hic</td><td>High Crit</td></tr><tr><td>imp</td><td>Implement</td></tr><tr><td>lof</td><td>Load Free</td></tr><tr><td>lom</td><td>Load Minor</td></tr><tr><td>off</td><td>Offhand</td></tr><tr><td>one</td><td>One-handed</td></tr><tr><td>rch</td><td>Reach</td></tr><tr><td>rel</td><td>Reload</td></tr><tr><td>sml</td><td>Small</td></tr><tr><td>spc</td><td>Special</td></tr><tr><td>thv</td><td>Heavy Thrown</td></tr><tr><td>tlg</td><td>Light Thrown</td></tr><tr><td>two</td><td>Two-Handed</td></tr><tr><td>ver</td><td>Versatile</td></tr></tbody></table>",
+        "markdown": ""
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "MZbxT6Tw0ZjDJstw": 3
+      },
+      "flags": {
+        "core": {
+          "sourceId": "JournalEntry.s1GNpgdU1cGRYrGH.JournalEntryPage.L7LiUgL6CQFFnbAv"
+        }
+      },
+      "_stats": {
+        "systemId": "dnd4e",
+        "systemVersion": "0.4.55",
+        "coreVersion": "12.331",
+        "createdTime": 1688156215621,
+        "modifiedTime": 1716193745325,
+        "lastModifiedBy": "I7KuK59Oi0LTgI98",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!VLRhDKYMBtS0MrJa.L7LiUgL6CQFFnbAv"
+    },
+    {
+      "sort": 300000,
+      "name": "Ongoing Damage and Regeneration",
+      "type": "text",
+      "_id": "C2m3uSLEfak1AY5N",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Another customisation to Active Effects in the 4e system is the inclusion of ongoing damage and regeneration. By adding one or more ongoing damage entries to your effect, and setting an appropriate duration, you can model (and automate!) most cases of ongoing damage found in 4e content.</p><h2>Adding Damage instances</h2><p>The new \"Ongoing Damage/Regeneration\" section is found on the Effects tab while you are configuring your Active Effect, below the list of modifiers. You can add instances of ongoing damage in the same way as modifiers, but you don't need to know any attribute names—just the amount of damage, and the damage type.</p><p>As with modifiers, you can add as many different damage instances as you need to. You can also put both modifiers <em>and</em> ongoing damage/regen on the same Active Effect. That means you can create a \"save ends both\" or \"save ends all\" type effect by adding multiple modifiers and/or damage instances to a single Active Effect.</p><p>If you want to create a regeneration effect, just select <code>[Regeneration]</code> as the damage type. This is incompatible with other damage types; if you select multiple types including Regeneration, Regen will take precedence.</p><h3>Config Tips</h3><ul><li><p>The \"value\" field accepts <code>@variables</code>, the same as modifier effects (see @UUID[Compendium.dnd4e.manual.JournalEntry.PuJCVdkeDHbyFpeT.JournalEntryPage.UteMJPMuW11OAKWl]{Possible Variables in Formulae}). <strong>However—</strong>Keep in mind that variables reference values on the actor who<em> receives</em> the effect, not the actor who <em>inflicts</em> the effect. If you're making a power that applies ongoing damage/regen to another creature, you will probably still need to enter the actual number.</p></li><li><p>You can select multiple damage types from the list using <strong>ctrl+click</strong> or <strong>cmd+click</strong> (depending on your computer/OS).</p><ul><li><p>Note that this creates <em>one</em> ongoing damage instance with <em>multiple damage types</em>. If you need two ongoing damage instances, each with a different type, you should instead add a second damage entry to the list.</p></li></ul></li></ul><h2>Automation</h2><p>If you're using effects to model ongoing damage/regeneration, you also have the option to automate it at the beginning of each creature's turn.</p><p>By changing your system settings, you can choose whether ongoing damage from effects should be applied automatically, or should instead pop up a reminder card in chat. (You can also turn it off entirely if you don't use automation.) This is a client-level setting, so each player can choose how it's handled for creatures they control.</p><p>When automation is on, the system will collect all the instances of ongoing damage attached to a creature's currently-enabled active effects at the beginning of its turn, and apply only the highest of each unique type combination. If you have the system apply damage automatically, the creature's resistances/vulnerabilities will be factored into the resulting HP change.</p><h3>Automation Visibility</h3><p>For groups who prefer to obfuscate game information, the game can also be configured to make ongoing damage reports/reminders private for the controlling player. This is a game-wide setting (for obvious reasons!) but the GM can choose between making it public for all creatures, private for all creatures, or public for PCs only (private for NPCs).</p>",
+        "markdown": ""
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "I7KuK59Oi0LTgI98": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dnd4e",
+        "systemVersion": "0.4.24",
+        "coreVersion": "12.331",
+        "createdTime": 1695349147333,
+        "modifiedTime": 1695613542715,
+        "lastModifiedBy": "I7KuK59Oi0LTgI98",
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!journal.pages!VLRhDKYMBtS0MrJa.C2m3uSLEfak1AY5N"
+    }
+  ],
+  "ownership": {
+    "default": 0,
+    "MZbxT6Tw0ZjDJstw": 3
+  },
+  "_stats": {
+    "systemId": "dnd4e",
+    "systemVersion": "0.4.51",
+    "coreVersion": "12.331",
+    "createdTime": 1688154175895,
+    "modifiedTime": 1716459947169,
+    "lastModifiedBy": "I7KuK59Oi0LTgI98",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "VLRhDKYMBtS0MrJa",
+  "sort": 0,
+  "_key": "!journal!VLRhDKYMBtS0MrJa"
+}

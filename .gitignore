@@ -2,11 +2,7 @@
 .idea/
 .vs/
 /node_modules
-/packs/dist/*
 .vscode/launch.json
-
-# Level DB is complicated, and the only thing we can safely ignore is the .old files.
-packs/**/*.old
 
 dnd4e.lock
 /packs
