@@ -354,7 +354,7 @@
 "DND4E.Death": "Death",
 "DND4E.DeathSave": "Death Save",
 "DND4E.DeathSavePlural": "Death Saves",
-"DND4E.DeathSaveCriticalSuccess": " has critically succeeded on a death saving throw and may now spend 1 healing surge to regain hitpoints.",
+"DND4E.DeathSaveCriticalSuccess": " has critically succeeded on a death saving throw and recovers and heals half their bloodied value.",
 "DND4E.DeathSaveFails": "Death Save Failures",
 "DND4E.DeathSaveFailure": " has died with 3 death save failures!",
 "DND4E.DeathSaveRoll": "Roll Death Saving Throw",

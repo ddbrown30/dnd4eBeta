@@ -22,10 +22,10 @@ export class Actor4e extends Actor {
 		// set default to sorting
 		if (data.type) {
 			if (!data?.system?.powerGroupTypes) {
-				data.system.powerGroupTypes = `usage`;
+				data.system.powerGroupTypes = `actionMod`;
 			}
 			if (!data?.system?.powerSortTypes) {
-				data.system.powerSortTypes = `actionType`;
+				data.system.powerSortTypes = `useType`;
 			}
 		}
 	}
@@ -1327,6 +1327,7 @@ export class Actor4e extends Actor {
 				speaker: ChatMessage.getSpeaker(),
 				content: this.name + game.i18n.localize("DND4E.DeathSaveCriticalSuccess")
 			});
+			updateData["system.attributes.hp.value"] = Math.floor(this.system.details.bloodied / 2);
 		}
 		console.log(roll.total)
 		console.log(rollConfig.critical)
