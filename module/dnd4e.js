@@ -387,11 +387,43 @@ Hooks.on("combatRound", function(combat, updates, options){
 })
 
 Hooks.on("updateActor", async function(actor, updates, options){
-	const bloodiedStatus = CONFIG.statusEffects.find(e => e.id === "bloodied");
-	let bloodiedEffect = actor.effects.find((e) => (e.id == bloodiedStatus._id) || ((e.statuses.size === 1) && e.statuses.has(bloodiedStatus.id)));
-	let shouldBeBloodied = actor.system.details.isBloodied && actor.system.attributes.hp.value > 0;
-	if ((shouldBeBloodied && !bloodiedEffect) ||
-		(!shouldBeBloodied && bloodiedEffect)) {
-		await actor.toggleStatusEffect("bloodied");
+	if (!updates.system?.attributes?.hp?.hasOwnProperty("value")) {
+		return;
+	}
+	
+	let isBloodied = actor.system.details.isBloodied && actor.system.attributes.hp.value > 0;
+	let isDead = 	actor.system.details.deathsavefail >= actor.system.details.deathsaves ||
+					actor.system.attributes.hp.value <= actor.system.details.bloodied * -1 ||
+					(actor.type == "NPC" && actor.system.attributes.hp.value <= 0);
+	let isDying = !isDead && actor.system.attributes.hp.value <= 0;
+
+	if (isBloodied) {
+		await addEffect("bloodied", actor, false);
+	} else {
+		await deleteEffect("bloodied", actor);
+	}
+	
+	if (isDying) {
+		await addEffect("dying", actor, true);
+	} else {
+		await deleteEffect("dying", actor);
+	}
+	
+	if (isDead) {
+		await addEffect("dead", actor, true);
+	} else {
+		await deleteEffect("dead", actor);
 	}
 })
+
+async function addEffect(statusToCheck, actor, overlay = true) {
+	if (!actor.effects.find(e => e.statuses.has(statusToCheck))) {
+		await actor.toggleStatusEffect(statusToCheck, { active: true, overlay: overlay })
+	}
+}
+
+async function deleteEffect(statusToCheck, actor) {
+	if (actor.effects.find(e => e.statuses.has(statusToCheck))) {
+		await actor.toggleStatusEffect(statusToCheck, { active: false })
+	}
+}
