@@ -18,6 +18,74 @@ export default class ActorSheet4eNPC extends ActorSheet4e {
 		return `systems/dnd4e/templates/npc-sheet.html`;
 	}
 
+	async getData(options) {
+		let data = await super.getData(options);
+
+		let immunes = [];
+		let resists = [];
+		let vulns = [];
+		let resistances = Object.values(this.actor.system.resistances);
+		for (let res of resistances) {
+			if (res.immune) {
+				immunes.push(res.label.toLowerCase());
+			} else if (res.res > 0) {
+				resists.push(res.res + " " + res.label.toLowerCase());
+			} else if (res.vuln > 0) {
+				vulns.push(res.vuln + " " + res.label.toLowerCase());
+			}
+		}
+
+		for (let immunity of this.actor.system.untypedResistances.immunities) {
+			immunes.push(immunity);
+		}
+
+		for (let resistance of this.actor.system.untypedResistances.resistances) {
+			resists.push(resistance);
+		}
+
+		for (let vulnerability of this.actor.system.untypedResistances.vulnerabilities) {
+			vulns.push(vulnerability);
+		}
+
+		let resistText = "";
+		if (immunes.length) {
+			resistText += "<b>Immune</b>"
+			for (let immune of immunes) {
+				resistText += " " + immune + ",";
+			}
+			resistText = resistText.substring(0, resistText.length - 1);
+			
+			if (resists.length || vulns.length) {
+				resistText += "; ";
+			}
+		}
+
+		if (resists.length) {
+			resistText += "<b>Resist</b>"
+			for (let resist of resists) {
+				resistText += " " + resist + ",";
+			}
+			resistText = resistText.substring(0, resistText.length - 1);
+			
+			if (vulns.length) {
+				resistText += "; ";
+			}
+		}
+
+		if (vulns.length) {
+			resistText += "<b>Vulnerable</b>"
+			for (let vuln of vulns) {
+				resistText += " " + vuln + ",";
+			}
+			resistText = resistText.substring(0, resistText.length - 1);
+		}
+
+		data.resistText = resistText;
+		data.hasResistText = !!resistText.length;
+
+		return data;
+	}
+
 	/* -------------------------------------------- */
 
 	/** @override */
