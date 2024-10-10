@@ -387,6 +387,10 @@ Hooks.on("combatRound", function(combat, updates, options){
 })
 
 Hooks.on("updateActor", async function(actor, updates, options){
+	if (!game.user.isGM) {
+		return;
+	}
+
 	if (!updates.system?.attributes?.hp?.hasOwnProperty("value")) {
 		return;
 	}
