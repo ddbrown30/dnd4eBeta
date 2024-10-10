@@ -1336,46 +1336,7 @@ export class Actor4e extends Actor {
 
 	async shortRest(event, options) {
 		const updateData = {};
-		updateData[`system.attributes.hp.value`] = this.system.attributes.hp.value;
-
-		if (options.surge > 0) {
-			if (options.surge > this.system.details.surges.value)
-				options.surge = this.system.details.surges.value;
-
-			let r = new Roll("0");
-			let healamount = 0;
-			for (let i = 0; i < options.surge; i++) {
-
-				if (options.bonus != "") {
-					r = new Roll(options.bonus);
-					try {
-						// await r.roll({async : true});
-						await r.roll();
-
-					} catch (error) {
-						ui.notifications.error(game.i18n.localize("DND4E.InvalidHealingBonus"));
-						r = new Roll("0");
-						// await r.roll({async : true});
-						await r.roll();
-					}
-				}
-				healamount += this.system.details.surgeValue + (r.total || 0);
-				console.log(`surgeValue:${this.system.details.surgeValue}`)
-				console.log(`total:${r.total}`)
-				console.log(`healamount:${healamount}`)
-			}
-
-			if (healamount) {
-				updateData[`system.attributes.hp.value`] = Math.min(
-					(Math.max(0, this.system.attributes.hp.value) + healamount),
-					this.system.attributes.hp.max
-				);
-			}
-
-			if (this.system.details.surges.value > 0)
-				updateData[`system.details.surges.value`] = this.system.details.surges.value - options.surge;
-
-		}
+		updateData[`system.attributes.hp.value`] = this.system.attributes.hp.max;
 
 		if (!this.system.attributes.hp.temprest)
 			updateData[`system.attributes.temphp.value`] = "";
