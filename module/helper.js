@@ -53,6 +53,20 @@ export class Helper {
 		return `(${str})`
 	}
 
+	static async waitForDice3d(roll) {
+		if (!game.dice3d) {
+			return;
+		}
+		
+		await game.dice3d.showForRoll(roll);
+	
+		for (let die of roll.dice) {
+			for (let result of die.results) {
+				result.hidden = true;
+			}
+		}
+	}
+
 	/**
 	 * Find A suitable weapon to use with the power.
 	 * Either the specified weapon, or a weapon that matches the itemData.weaponType category if itemData.weaponUse is set to default

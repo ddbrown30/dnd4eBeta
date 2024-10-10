@@ -1744,6 +1744,7 @@ export default class Item4e extends Item {
 		// Invoke the roll and submit it to chat
 		// const roll = await new Roll(rollData.item.formula, rollData).roll({async : true});
 		const roll = await new Roll(rollData.item.formula, rollData).roll();
+		await Helper.waitForDice3d(roll);
 		roll.toMessage({ 
 			speaker: ChatMessage.getSpeaker({actor: this.actor}),
 			flavor: this.system.chatFlavor || title,
@@ -1819,32 +1820,6 @@ export default class Item4e extends Item {
 			if ( this.isEmbedded  && this.parent.sheet ) this.parent.sheet.minimize();
 		}
 		return true;
-	}
-
-	/* -------------------------------------------- */
-
-	/**
-	 * Perform an ability recharge test for an item which uses the d6 recharge mechanic
-	 * @return {Promise<Roll>}   A Promise which resolves to the created Roll instance
-	 */
-	async rollRecharge() {
-		const data = this.system;
-		if ( !data.recharge.value ) return;
-
-		// Roll the check
-		// const roll = await new Roll("1d6").roll({async: true});
-		const roll = await new Roll("1d6").roll();
-		const success = roll.total >= parseInt(data.recharge.value);
-
-		// Display a Chat Message
-		const promises = [roll.toMessage({
-			flavor: `${game.i18n.format("DND4E.ItemRechargeCheck", {name: this.name})} - ${game.i18n.localize(success ? "DND4E.ItemRechargeSuccess" : "DND4E.ItemRechargeFailure")}`,
-			speaker: ChatMessage.getSpeaker({actor: this.actor, token: this.actor.token})
-		})];
-
-		// Update the Item data
-		if ( success ) promises.push(this.update({"system.recharge.charged": true}));
-		return Promise.all(promises).then(() => roll);
 	}
 
 	/* -------------------------------------------- */

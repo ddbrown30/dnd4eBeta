@@ -1501,6 +1501,7 @@ ${parseInt(data.system.movement.walk.value)} ${game.i18n.localize("DND4E.Movemen
 					flav = `${item.name} successfully recharged!`;
 				}
 
+				await Helper.waitForDice3d(r);
 				r.toMessage({
 					user: game.user.id,
 					speaker: {actor: this.object, alias: this.object.name},

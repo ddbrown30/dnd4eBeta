@@ -269,6 +269,7 @@ async function performD20RollAndCreateMessage(form, {parts, partsExpressionRepla
 	// Convert the roll to a chat message and return the roll
 	rollMode = form ? form.rollMode.value : rollMode;
 
+	await Helper.waitForDice3d(roll);
 	await roll.toMessage({
 		speaker: speaker,
 		flavor: flavor,
@@ -447,6 +448,8 @@ async function performDamageRollAndCreateChatMessage(form, {parts, partsCrit, pa
 	}
 	// Convert the roll to a chat message
 	rollMode = form ? form.rollMode.value : rollMode;
+
+	await Helper.waitForDice3d(roll);
 	roll.toMessage({
 		speaker,
 		flavor
