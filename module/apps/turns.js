@@ -100,7 +100,33 @@ export class Turns{
 			await currentTurnActor.deleteEmbeddedDocuments("ActiveEffect", toDelete);
 		}
 
-		await currentTurnActor.promptEoTSavesSocket();
+		function getActorOwner(actor) {
+			let owner;
+			let player;
+			let gm;
+			game.users.forEach((user) => {
+				if (user.isGM) {
+					gm = user;
+				} else if (user.character?.id === actor.id) {
+					owner = user;
+				} else if (actor.getUserLevel(user) > 2) {
+					player = user;
+				}
+			});
+			return owner || player || gm;
+		}
+
+		let currentActorOwner = getActorOwner(currentTurnActor);
+
+		if(currentActorOwner == game.user || !currentActorOwner.active){
+			await currentTurnActor.promptEoTSavesSocket();
+		} else {
+			game.socket.emit('system.dnd4e', {
+				operation: 'promptEoTSaves',
+				tokenID: currentTurnToken.id,
+				scene: combat.scene.id
+			});
+		}
 	}
 
 	static async handleStartOfTurn(combat, updates) {
