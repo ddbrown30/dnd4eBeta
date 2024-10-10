@@ -77,7 +77,7 @@ export default class ItemSheet4e extends ItemSheet {
 			if (itemData.system.autoGenChatPowerCard) {
 				let cardString = Helper._preparePowerCardData(await this.item.getChatData(), CONFIG);
 				cardString = Helper.commonReplace(cardString, null, this, null, 1);
-				itemData.system.description.value = cardString;
+				itemData.system.description.value += "<p>" + cardString;
 			} 
 		}
 
