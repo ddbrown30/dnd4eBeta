@@ -16,9 +16,13 @@
 			"discord": "endlesnights#9000"
 		  }
 	],
-	"relationships.requires": [
-		{ "name": "lib-wrapper" }
-	],
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {}
+      }
+    ],
 	"esmodules": [
 		"module/dnd4e.js"
 	],
